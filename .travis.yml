@@ -1,0 +1,14 @@
+---
+before_install:
+- sudo add-apt-repository -y ppa:ntadej/tano
+- sudo apt-get update
+- sudo apt-get install -y qtcreator libvlc-dev libvlccore7 libvlccore-dev libvlc-dev libvlc5 libqt5webkit5-dev libvlc-qt-core1 libvlc-qt-widgets1 libvlc-qt-dbg libvlc-qt-dev
+
+compiler:
+  - clang
+  - gcc
+
+script:
+  - qmake -project
+  - qmake hello.pro
+  - make
